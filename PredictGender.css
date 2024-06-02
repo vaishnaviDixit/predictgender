@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    animation: fadeIn 1s ease-in-out;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container .app-title {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.container .user-input-box {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .user-input-box input {
+    all: unset;
+    height: 50px;
+    width: 80%;
+    border: 2px solid #ff7e5f;
+    padding: 0 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.container .user-input-box input:focus {
+    border-color: #feb47b;
+}
+
+.container .user-input-box button {
+    all: unset;
+    height: 50px;
+    width: 80%;
+    background: #ff7e5f;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.container .user-input-box button:hover {
+    background: #feb47b;
+    animation: bounce 0.6s;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.container .result-box {
+    padding: 20px;
+    background: #ff7e5f;
+    margin-top: 30px;
+    border-radius: 15px;
+    display: none;
+    animation: slideIn 0.5s ease-out;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    position: relative; /* Added position relative */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.container .result-box .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centering the content */
+}
+
+.container .result-box .name {
+    font-size: 24px;
+    color: white;
+    margin-top: 10px;
+    animation: colorChange 3s infinite, scaleIn 0.5s ease-in-out;
+}
+
+@keyframes colorChange {
+    0% {
+        color: #fff;
+    }
+    50% {
+        color: #f8f8f8;
+    }
+    100% {
+        color: #fff;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.container .result-box .gender-logo {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    color: #ff7e5f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    font-size: 40px;
+    margin: 20px auto 10px auto;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.container .result-box .gender {
+    font-size: 28px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-top: 10px;
+    animation: colorChange 3s infinite;
+}
+
+.container .result-box .probability {
+    font-size: 16px;
+    color: white;
+    margin-top: 5px;
+    animation: colorChange 3s infinite;
+}
+
+.container .result-box .feedback-options {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container .result-box .feedback-options button {
+    all: unset;
+    height: 40px;
+    width: 120px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+   
+}
